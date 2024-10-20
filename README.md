@@ -1,117 +1,82 @@
-import React, { useState } from 'react';
-import { Github, Instagram, Mail, ExternalLink, Code, Book, Zap } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+# Hi there, I'm Michael Moses! 👋
 
-const skills = [
-  { name: 'AWS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
-  { name: 'CSS3', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg' },
-  { name: 'Docker', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg' },
-  { name: 'Express', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg' },
-  { name: 'Flutter', icon: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg' },
-  { name: 'Git', icon: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg' },
-  { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
-  { name: 'MongoDB', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg' },
-  { name: 'NestJS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg' },
-  { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg' },
-  { name: 'OpenCV', icon: 'https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg' },
-  { name: 'PostgreSQL', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg' },
-  { name: 'Postman', icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
-  { name: 'Python', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' },
-  { name: 'PyTorch', icon: 'https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg' },
-  { name: 'React', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg' },
-  { name: 'SQLite', icon: 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg' },
-  { name: 'Tailwind', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
-  { name: 'Unity', icon: 'https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg' },
-  { name: 'Zapier', icon: 'https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg' },
-];
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Generative+AI+Specialist;Fullstack+Web+Developer;Machine+Learning+Enthusiast" alt="Typing SVG" />
+</div>
 
-const DeveloperProfile = () => {
-  const [activeTab, setActiveTab] = useState('about');
+## 🚀 About Me
 
-  return (
-    <div className="container mx-auto p-4 max-w-4xl">
-      <Card className="w-full">
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="text-3xl font-bold">Michael Moses</CardTitle>
-              <CardDescription className="text-xl">
-                Generative AI Specialist | Fullstack Web Dev | ML Enthusiast
-              </CardDescription>
-            </div>
-            <img 
-              src="/api/placeholder/150/150" 
-              alt="Michael Moses" 
-              className="rounded-full w-24 h-24 object-cover"
-            />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="about">About</TabsTrigger>
-              <TabsTrigger value="skills">Skills</TabsTrigger>
-              <TabsTrigger value="projects">Projects</TabsTrigger>
-            </TabsList>
-            <TabsContent value="about">
-              <div className="space-y-4">
-                <p>🔭 I'm currently working on ..</p>
-                <p>🌱 I'm currently learning flutter, nestjs</p>
-                <p>👯 I'm looking to collaborate on AI projects</p>
-                <p>⚡ Fun fact: I like dancing and learning new things each day.</p>
-              </div>
-            </TabsContent>
-            <TabsContent value="skills">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {skills.map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center">
-                    <img src={skill.icon} alt={skill.name} className="w-12 h-12" />
-                    <span className="mt-2 text-sm">{skill.name}</span>
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-            <TabsContent value="projects">
-              <div className="space-y-4">
-                <p>All of my projects are available at my portfolio website.</p>
-                <Button variant="outline">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Visit Portfolio
-                </Button>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <div className="flex space-x-2">
-            <Badge variant="outline" className="flex items-center">
-              <Code className="mr-1 h-3 w-3" /> Python
-            </Badge>
-            <Badge variant="outline" className="flex items-center">
-              <Code className="mr-1 h-3 w-3" /> React
-            </Badge>
-            <Badge variant="outline" className="flex items-center">
-              <Code className="mr-1 h-3 w-3" /> JavaScript
-            </Badge>
-          </div>
-          <div className="flex space-x-2">
-            <Button variant="ghost" size="icon">
-              <Instagram className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Github className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Mail className="h-4 w-4" />
-            </Button>
-          </div>
-        </CardFooter>
-      </Card>
-    </div>
-  );
-};
+- 🔭 I'm currently working on **exciting AI projects**
+- 🌱 I'm currently learning **Flutter** and **NestJS**
+- 👯 I'm looking to collaborate on [AI projects](coming soon)
+- 👨‍💻 Check out my portfolio: [https://michael-moses.onrender.com/](https://michael-moses.onrender.com/)
+- 💬 Ask me about **Python**, **React**, and **JavaScript**
+- 📫 Reach me at: **mosesmichael878@gmail.com**
+- ⚡ Fun fact: I love dancing and learning new things every day!
 
-export default DeveloperProfile;
+## 🛠️ Skills & Tools
+
+<div align="center">
+  
+  ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+  ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+  ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=Node.js&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/-Express.js-000000?style=flat-square&logo=express&logoColor=white)
+  ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+  ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+  ![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+  ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+  ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
+  ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+  ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+
+</div>
+
+## 📊 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=your-github-username&show_icons=true&theme=radical" alt="GitHub Stats" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=your-github-username&theme=radical" alt="GitHub Streak" />
+</div>
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=your-github-username&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
+</div>
+
+## 📈 Contribution Graph
+
+<div align="center">
+  <img src="https://activity-graph.herokuapp.com/graph?username=your-github-username&theme=react-dark" alt="Contribution Graph" />
+</div>
+
+## 🤝 Connect with me
+
+<div align="center">
+  <a href="https://instagram.com/m.k.u.u._.001" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="mailto:mosesmichael878@gmail.com">
+    <img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://michael-moses.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/-Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio" />
+  </a>
+</div>
+
+---
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=your-github-username&style=flat-square&color=blue" alt="Profile views" />
+</div>
+
+<div align="center">
+  
+  **Thanks for visiting my profile! Have a great day! 😊**
+  
+</div>
