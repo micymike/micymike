@@ -1,56 +1,117 @@
-<h1 align="center">Hi there 👋, I'm Michael Moses</h1>
-<h3 align="center">Generative AI Specialist | Fullstack Developer | Machine Learning Enthusiast</h3>
+import React, { useState } from 'react';
+import { Github, Instagram, Mail, ExternalLink, Code, Book, Zap } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-<p align="center">
-  I'm passionate about pushing the boundaries of technology and innovation, combining AI with modern web development and machine learning.
-</p>
+const skills = [
+  { name: 'AWS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+  { name: 'CSS3', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg' },
+  { name: 'Docker', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg' },
+  { name: 'Express', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg' },
+  { name: 'Flutter', icon: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg' },
+  { name: 'Git', icon: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg' },
+  { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
+  { name: 'MongoDB', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg' },
+  { name: 'NestJS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg' },
+  { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg' },
+  { name: 'OpenCV', icon: 'https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg' },
+  { name: 'PostgreSQL', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg' },
+  { name: 'Postman', icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
+  { name: 'Python', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg' },
+  { name: 'PyTorch', icon: 'https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg' },
+  { name: 'React', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg' },
+  { name: 'SQLite', icon: 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg' },
+  { name: 'Tailwind', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+  { name: 'Unity', icon: 'https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg' },
+  { name: 'Zapier', icon: 'https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg' },
+];
 
----
+const DeveloperProfile = () => {
+  const [activeTab, setActiveTab] = useState('about');
 
-### 🔭 Current Focus
-- Working on exciting **AI-driven projects** (Details coming soon)
+  return (
+    <div className="container mx-auto p-4 max-w-4xl">
+      <Card className="w-full">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-3xl font-bold">Michael Moses</CardTitle>
+              <CardDescription className="text-xl">
+                Generative AI Specialist | Fullstack Web Dev | ML Enthusiast
+              </CardDescription>
+            </div>
+            <img 
+              src="/api/placeholder/150/150" 
+              alt="Michael Moses" 
+              className="rounded-full w-24 h-24 object-cover"
+            />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="about">About</TabsTrigger>
+              <TabsTrigger value="skills">Skills</TabsTrigger>
+              <TabsTrigger value="projects">Projects</TabsTrigger>
+            </TabsList>
+            <TabsContent value="about">
+              <div className="space-y-4">
+                <p>🔭 I'm currently working on ..</p>
+                <p>🌱 I'm currently learning flutter, nestjs</p>
+                <p>👯 I'm looking to collaborate on AI projects</p>
+                <p>⚡ Fun fact: I like dancing and learning new things each day.</p>
+              </div>
+            </TabsContent>
+            <TabsContent value="skills">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {skills.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center">
+                    <img src={skill.icon} alt={skill.name} className="w-12 h-12" />
+                    <span className="mt-2 text-sm">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="projects">
+              <div className="space-y-4">
+                <p>All of my projects are available at my portfolio website.</p>
+                <Button variant="outline">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Portfolio
+                </Button>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <div className="flex space-x-2">
+            <Badge variant="outline" className="flex items-center">
+              <Code className="mr-1 h-3 w-3" /> Python
+            </Badge>
+            <Badge variant="outline" className="flex items-center">
+              <Code className="mr-1 h-3 w-3" /> React
+            </Badge>
+            <Badge variant="outline" className="flex items-center">
+              <Code className="mr-1 h-3 w-3" /> JavaScript
+            </Badge>
+          </div>
+          <div className="flex space-x-2">
+            <Button variant="ghost" size="icon">
+              <Instagram className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Github className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Mail className="h-4 w-4" />
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+};
 
-### 🌱 Learning Journey
-- Currently diving into **Flutter** and **NestJS** to expand my development toolkit.
-
-### 🤝 Collaboration
-- Looking to collaborate on innovative **AI projects** and **cutting-edge web development**.
-
-### 👨‍💻 My Projects
-- You can check out my portfolio at: [michael-moses.onrender.com](https://michael-moses.onrender.com/)
-
-### 💬 Ask Me About
-- **Python**, **React**, **JavaScript**, and how they come together to create smart applications.
-
-### 📫 Let's Connect
-- Email me: mosesmichael878@gmail.com
-
-### ⚡ Fun Fact
-- I'm a techie who loves **dancing** and exploring **new learning adventures** daily.
-
----
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-  <a href="https://instagram.com/m.k.u.u._.001" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="Instagram">
-  </a>
-</p>
-
----
-
-<h3 align="left">Languages & Tools:</h3>
-<p align="left">
-  <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-  <img src="https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-  <img src="https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/NestJS-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS">
-  <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/TailwindCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
-  <img src="https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
-  <img src="https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-  <img src="https://img.shields.io/badge/Unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
-</p>
+export default DeveloperProfile;
