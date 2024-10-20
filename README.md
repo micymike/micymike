@@ -33,24 +33,6 @@
 
 </div>
 
-
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=your-github-username&theme=radical" alt="GitHub Streak" />
-</div>
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=your-github-username&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
-</div>
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://activity-graph.herokuapp.com/graph?username=your-github-username&theme=react-dark" alt="Contribution Graph" />
-</div>
-
 ## 🤝 Connect with me
 
 <div align="center">
